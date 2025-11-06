@@ -1,0 +1,18 @@
+Project Title:
+Single Cable Machine Queue Simulation
+
+Project Overview:
+In this project I simulate the line for one cable machine in a 24-hour gym. There is only one machine, so people have to wait, use it, and then leave. The goal is to see how the line changes over time: how many are waiting, who is using the machine, and who is finished.
+
+Data Structure:
+I will use a std::map<string, MachineLists>. The key is the machine name ("Cable Machine"). The value is a std::array<std::list<std::string>, 3>.  
+Index 0 = waiting list,  
+index 1 = currently using,  
+index 2 = finished.
+
+File Input and Simulation:
+At the start, the program will read at least 100 lines from a text file like:
+
+    Cable Machine,Alice,0
+
+and put each member in the correct list. Then main() will show time step 0 and run about 30 time steps. I will write three functions: loadInitialData, simulateTimeSteps, and printGymState to keep the code organized.
